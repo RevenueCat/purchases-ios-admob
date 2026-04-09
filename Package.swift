@@ -17,7 +17,7 @@ let package = Package(
         .library(name: "RevenueCatAdMob", targets: ["RevenueCatAdMob"])
     ],
     dependencies: [
-        .package(url: "https://github.com/RevenueCat/purchases-ios-spm.git", exact: "5.67.1"),
+        .package(url: "https://github.com/RevenueCat/purchases-ios-spm.git", exact: "5.67.2"),
         .package(
             url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
             "12.0.0"..<"14.0.0"
