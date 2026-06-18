@@ -17,7 +17,7 @@ let package = Package(
         .library(name: "RevenueCatAdMob", targets: ["RevenueCatAdMob"])
     ],
     dependencies: [
-        .package(url: "https://github.com/RevenueCat/purchases-ios-spm.git", exact: "5.78.0"),
+        .package(url: "https://github.com/RevenueCat/purchases-ios-spm.git", exact: "5.79.0"),
         .package(url: "https://github.com/Quick/Nimble.git", from: "13.0.0"),
         .package(
             url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
