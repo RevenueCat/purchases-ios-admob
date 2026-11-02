@@ -17,7 +17,7 @@ let package = Package(
         .library(name: "RevenueCatAdMob", targets: ["RevenueCatAdMob"])
     ],
     dependencies: [
-        .package(url: "https://github.com/RevenueCat/purchases-ios-spm.git", exact: "5.100.0"),
+        .package(url: "https://github.com/RevenueCat/purchases-ios-spm.git", exact: "5.101.0"),
         .package(url: "https://github.com/Quick/Nimble.git", from: "13.0.0"),
         .package(
             url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
@@ -29,6 +29,7 @@ let package = Package(
             name: "RevenueCatAdMob",
             dependencies: [
                 .product(name: "RevenueCat", package: "purchases-ios-spm"),
+                .product(name: "RevenueCatUI", package: "purchases-ios-spm"),
                 .product(name: "GoogleMobileAds",
                          package: "swift-package-manager-google-mobile-ads",
                          condition: .when(platforms: [.iOS]))
@@ -37,6 +38,7 @@ let package = Package(
             name: "RevenueCatAdMobTests",
             dependencies: [
                 "RevenueCatAdMob",
+                .product(name: "RevenueCatUI", package: "purchases-ios-spm"),
                 .product(name: "Nimble", package: "Nimble")
             ])
     ]
