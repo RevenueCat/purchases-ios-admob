@@ -10,6 +10,19 @@ import RevenueCat
 final class APISurfaceTests: AdapterTestCase {
 
     @MainActor
+    func testCheckpointPresenterEntryPointsRemainAvailableInSwift() {
+        let presenter: AdPresenter = AdMobPresenter()
+        let present: (
+            AdMobPresenter
+        ) -> (AdPresentationParams, @escaping AdPresentationCompletion) -> Void = AdMobPresenter.present(
+            params:completion:
+        )
+
+        XCTAssertNotNil(presenter)
+        XCTAssertNotNil(present)
+    }
+
+    @MainActor
     func testInterstitialCheckpointPresenterEntryPointsRemainAvailableInSwift() {
         let presenter: AdPresenter = AdMobInterstitialPresenter()
         let present: (
@@ -17,6 +30,33 @@ final class APISurfaceTests: AdapterTestCase {
         ) -> (AdPresentationParams, @escaping AdPresentationCompletion) -> Void = AdMobInterstitialPresenter.present(
             params:completion:
         )
+
+        XCTAssertNotNil(presenter)
+        XCTAssertNotNil(present)
+    }
+
+    @MainActor
+    func testRewardedCheckpointPresenterEntryPointsRemainAvailableInSwift() {
+        let presenter: AdPresenter = AdMobRewardedPresenter()
+        let present: (
+            AdMobRewardedPresenter
+        ) -> (AdPresentationParams, @escaping AdPresentationCompletion) -> Void = AdMobRewardedPresenter.present(
+            params:completion:
+        )
+
+        XCTAssertNotNil(presenter)
+        XCTAssertNotNil(present)
+    }
+
+    @MainActor
+    func testRewardedInterstitialCheckpointPresenterEntryPointsRemainAvailableInSwift() {
+        let presenter: AdPresenter = AdMobRewardedInterstitialPresenter()
+        let present: (
+            AdMobRewardedInterstitialPresenter
+        ) -> (AdPresentationParams, @escaping AdPresentationCompletion) -> Void
+            = AdMobRewardedInterstitialPresenter.present(
+                params:completion:
+            )
 
         XCTAssertNotNil(presenter)
         XCTAssertNotNil(present)
